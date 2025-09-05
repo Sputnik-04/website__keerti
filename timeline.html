@@ -9,6 +9,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
+            background: #f3f0fb; /* Matching previous code's background */
+            color: #333; /* Matching previous code's text color */
         }
         .timeline-line::before {
             content: '';
@@ -17,7 +19,7 @@
             left: 0;
             right: 0;
             height: 2px;
-            background: linear-gradient(to right, #6366f1, #3b82f6);
+            background: #f1c40f; /* Accent line */
             z-index: 10;
         }
         @media (min-width: 768px) {
@@ -45,14 +47,13 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
     <header class="text-center py-10 bg-white shadow-sm">
         <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold text-gray-900 mb-1">KPC</h1>
-            <h2 class="text-xl font-medium text-blue-600 mb-4">Incoming PM III @ Walmart</h2>
+            <h1 class="text-4xl font-bold text-gray-900 mb-1">Maya Mishra</h1>
+            <h2 class="text-xl font-medium" style="color: #4e54c8;">Incoming PM III @ Walmart</h2>
             <div class="w-28 h-28 mx-auto bg-gray-200 rounded-full overflow-hidden shadow-lg">
-                <!-- Placeholder SVG for a professional profile image -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="text-gray-400 w-full h-full p-2">
                     <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0a4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
                 </svg>
@@ -65,111 +66,104 @@
         
         <div class="timeline-events flex justify-between items-start md:space-x-4 space-y-8 md:space-y-0 relative z-20">
             
-            <!-- Event 1: Anna University -->
-            <div class="event-card relative flex flex-col items-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform md:hover:scale-105">
-                <div class="absolute w-6 h-6 -top-3 md:-top-3 bg-white rounded-full border-2 border-blue-500"></div>
+            <!-- Anna University -->
+            <div class="event-card relative flex flex-col items-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-300 transform md:hover:scale-125">
                 <div class="p-3 bg-gray-100 rounded-full mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-10 h-10" style="color: #4e54c8;">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.146a6.994 6.994 0 0 0 2.253 2.253L12 18.001l5.487-5.602a6.994 6.994 0 0 0 2.253-2.253L12 4.147l-7.74 5.999Z" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.001V21M6.75 16.5v3.75" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 16.5v3.75" />
                     </svg>
                 </div>
                 <div class="text-center">
-                    <div class="text-sm font-semibold text-blue-600 mb-1">2016 - 2020</div>
+                    <div class="text-sm font-semibold" style="color: #4e54c8;">2016 - 2020</div>
                     <div class="text-lg font-bold text-gray-900 leading-tight">Anna University</div>
                     <div class="text-sm text-gray-500 mt-1">B.E., ECE</div>
                 </div>
             </div>
 
-            <!-- Event 2: ValueLabs -->
-            <div class="event-card relative flex flex-col items-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform md:hover:scale-105">
-                <div class="absolute w-6 h-6 -top-3 md:-top-3 bg-white rounded-full border-2 border-blue-500"></div>
+            <!-- ValueLabs -->
+            <div class="event-card relative flex flex-col items-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-300 transform md:hover:scale-125">
                 <div class="p-3 bg-gray-100 rounded-full mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-10 h-10" style="color: #4e54c8;">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.75v-3.5a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v3.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5ZM5.25 17v2.25a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V17M12 9.75v6" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 12h9m-9 3h9" />
                     </svg>
                 </div>
                 <div class="text-center">
-                    <div class="text-sm font-semibold text-blue-600 mb-1">2020 - 2021</div>
+                    <div class="text-sm font-semibold" style="color: #4e54c8;">2020 - 2021</div>
                     <div class="text-lg font-bold text-gray-900 leading-tight">ValueLabs</div>
                     <div class="text-sm text-gray-500 mt-1">Software-Products Engineer</div>
                 </div>
             </div>
-            
-            <!-- Event 3: Caterpillar -->
-            <div class="event-card relative flex flex-col items-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform md:hover:scale-105">
-                <div class="absolute w-6 h-6 -top-3 md:-top-3 bg-white rounded-full border-2 border-blue-500"></div>
+
+            <!-- Caterpillar -->
+            <div class="event-card relative flex flex-col items-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-300 transform md:hover:scale-125">
                 <div class="p-3 bg-gray-100 rounded-full mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-10 h-10" style="color: #4e54c8;">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18h12m-6-13v10m-6-10h12" />
                     </svg>
                 </div>
                 <div class="text-center">
-                    <div class="text-sm font-semibold text-blue-600 mb-1">2021 - 2023</div>
+                    <div class="text-sm font-semibold" style="color: #4e54c8;">2021 - 2023</div>
                     <div class="text-lg font-bold text-gray-900 leading-tight">Caterpillar</div>
                     <div class="text-sm text-gray-500 mt-1">Product Consultant (SAP)</div>
                 </div>
             </div>
 
-            <!-- Event 4: Purdue -->
-            <div class="event-card relative flex flex-col items-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform md:hover:scale-105">
-                <div class="absolute w-6 h-6 -top-3 md:-top-3 bg-white rounded-full border-2 border-blue-500"></div>
+            <!-- Purdue -->
+            <div class="event-card relative flex flex-col items-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-300 transform md:hover:scale-125">
                 <div class="p-3 bg-gray-100 rounded-full mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-10 h-10" style="color: #4e54c8;">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.001V21M6.75 16.5v3.75" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 16.5v3.75" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.146a6.994 6.994 0 0 0 2.253 2.253L12 18.001l5.487-5.602a6.994 6.994 0 0 0 2.253-2.253L12 4.147l-7.74 5.999Z" />
                     </svg>
                 </div>
                 <div class="text-center">
-                    <div class="text-sm font-semibold text-blue-600 mb-1">2023</div>
+                    <div class="text-sm font-semibold" style="color: #4e54c8;">2023</div>
                     <div class="text-lg font-bold text-gray-900 leading-tight">Purdue Univ.</div>
                     <div class="text-sm text-gray-500 mt-1">Masters in MEM</div>
                 </div>
             </div>
 
-            <!-- Event 5: Tesla -->
-            <div class="event-card relative flex flex-col items-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform md:hover:scale-105">
-                <div class="absolute w-6 h-6 -top-3 md:-top-3 bg-white rounded-full border-2 border-blue-500"></div>
+            <!-- Tesla -->
+            <div class="event-card relative flex flex-col items-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-300 transform md:hover:scale-125">
                 <div class="p-3 bg-gray-100 rounded-full mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-10 h-10" style="color: #4e54c8;">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM12 9v6m-3-3h6" />
                     </svg>
                 </div>
                 <div class="text-center">
-                    <div class="text-sm font-semibold text-blue-600 mb-1">Spring 2024</div>
+                    <div class="text-sm font-semibold" style="color: #4e54c8;">Spring 2024</div>
                     <div class="text-lg font-bold text-gray-900 leading-tight">Tesla</div>
                     <div class="text-sm text-gray-500 mt-1">Eng. Program Manager</div>
                 </div>
             </div>
-            
-            <!-- Event 6: Walmart -->
-            <div class="event-card relative flex flex-col items-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform md:hover:scale-105">
-                <div class="absolute w-6 h-6 -top-3 md:-top-3 bg-white rounded-full border-2 border-blue-500"></div>
+
+            <!-- Walmart -->
+            <div class="event-card relative flex flex-col items-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-300 transform md:hover:scale-125">
                 <div class="p-3 bg-gray-100 rounded-full mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-10 h-10" style="color: #4e54c8;">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 1 0 0 15 7.5 7.5 0 0 0 0-15ZM12 6v15M12 6a7.5 7.5 0 1 0 0 15m0-15h.008M12 21h.008M12 21v-.008m0-14.992V6Z" />
                     </svg>
                 </div>
                 <div class="text-center">
-                    <div class="text-sm font-semibold text-blue-600 mb-1">Summer 2024</div>
+                    <div class="text-sm font-semibold" style="color: #4e54c8;">Summer 2024</div>
                     <div class="text-lg font-bold text-gray-900 leading-tight">Walmart</div>
                     <div class="text-sm text-gray-500 mt-1">Product Manager</div>
                 </div>
             </div>
 
-            <!-- Event 7: ABB -->
-            <div class="event-card relative flex flex-col items-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform md:hover:scale-105">
-                <div class="absolute w-6 h-6 -top-3 md:-top-3 bg-white rounded-full border-2 border-blue-500"></div>
+            <!-- ABB -->
+            <div class="event-card relative flex flex-col items-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-300 transform md:hover:scale-125">
                 <div class="p-3 bg-gray-100 rounded-full mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-10 h-10" style="color: #4e54c8;">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                 </div>
                 <div class="text-center">
-                    <div class="text-sm font-semibold text-blue-600 mb-1">Fall 2024</div>
+                    <div class="text-sm font-semibold" style="color: #4e54c8;">Fall 2024</div>
                     <div class="text-lg font-bold text-gray-900 leading-tight">ABB</div>
                     <div class="text-sm text-gray-500 mt-1">Marketing & Sales</div>
                 </div>
