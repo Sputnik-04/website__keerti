@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keerti Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: 'Segoe UI', sans-serif; background: #f3f0fb; color: #333; line-height: 1.6; scroll-behavior: smooth;}
+
+    /* Navbar */
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 5%; position: fixed; top: 0; width: 100%;
+      background: #f3f0fb; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000;
+    }
+    nav .logo {font-size: 1.5rem; font-weight: bold; color: #222;}
+    nav ul {list-style: none; display: flex; gap: 2rem;}
+    nav ul li a {text-decoration: none; color: #444; font-weight: 500; transition: color 0.3s;}
+    nav ul li a:hover, nav ul li a.active {color: #4e54c8;}
+    .social-icons {display: flex; gap: 1rem;}
+    .social-icons a {color: #444; font-size: 1.2rem; transition: 0.3s;}
+    .social-icons a:hover {color: #4e54c8;}
+
+    /* Section Headings */
+    section {padding: 6% 10%;}
+    section h2 {
+      text-align: center; font-size: 2.5rem; margin-bottom: 2rem; color: #222; position: relative;
+    }
+    section h2::after {
+      content: ""; display: block; width: 60px; height: 3px;
+      background: #f1c40f; margin: 0.5rem auto 0;
+    }
+
+    /* Hero */
+    .hero {display: flex; justify-content: space-between; align-items: center; padding: 8% 10%; min-height: 100vh;}
+    .hero-text {max-width: 50%;}
+    .hero-text h4 {color: #f1c40f; font-size: 1.2rem; margin-bottom: 0.5rem;}
+    .hero-text h1 {font-size: 3rem; font-weight: bold; margin-bottom: 0.5rem; color: #222;}
+    .hero-text h2 {font-size: 1.5rem; margin-bottom: 1rem; color: #444;}
+    .hero-text p {font-size: 1rem; margin-bottom: 1.5rem; color: #555;}
+    .buttons {display: flex; gap: 1rem;}
+    .btn {padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; font-weight: 500; transition: 0.3s;}
+    .btn-primary {background: #222; color: #fff;}
+    .btn-primary:hover {background: #444;}
+    .btn-outline {border: 2px solid #222; color: #222;}
+    .btn-outline:hover {background: #222; color: #fff;}
+    .hero-img {width: 300px; height: 300px; border-radius: 50%; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2);}
+    .hero-img img {width: 100%; height: 100%; object-fit: cover;}
+
+    /* About */
+    .about-container {display: flex; justify-content: space-between; gap: 3rem;}
+    .about-left, .about-right {flex: 1;}
+    .about-left h3, .about-right h3 {margin-bottom: 1rem; font-size: 1.3rem; color: #222;}
+    .about-left p {margin-bottom: 1rem; color: #555;}
+    .about-right ul {list-style: none;}
+    .about-right li {margin-bottom: 1rem; color: #555;}
+    .about-right li span {font-weight: bold; color: #222;}
+    .about-right li::before {content: "• "; color: #f1c40f; margin-right: 8px;}
+
+    /* Experience */
+    .experience-card {
+      background: #fff; padding: 1.5rem; margin-bottom: 2rem; border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1); position: relative;
+    }
+    .experience-card h3 {color: #222; margin-bottom: 0.5rem;}
+    .experience-card h4 {color: #f39c12; margin-bottom: 0.5rem;}
+    .experience-card p {color: #555; margin-bottom: 1rem;}
+    .experience-card ul {list-style: none; padding-left: 1rem;}
+    .experience-card ul li {margin-bottom: 0.5rem; color: #555;}
+    .experience-card ul li::before {content: "• "; color: #f1c40f; margin-right: 8px;}
+    .experience-date {position: absolute; top: 20px; right: 20px; font-weight: bold; color: #666;}
+    .experience-link {display: inline-block; margin-top: 1rem; color: #4e54c8; text-decoration: none; font-weight: 500;}
+    .experience-link:hover {text-decoration: underline;}
+
+    /* Achievements */
+    .achievements-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;}
+    .achievement-card {
+      background: #fff; padding: 1.5rem; border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center;
+    }
+    .achievement-card h3 {margin-bottom: 0.5rem; color: #222;}
+    .achievement-card p {color: #555;}
+
+    /* Education */
+    .edu-container {display: flex; gap: 3rem; justify-content: space-between; flex-wrap: wrap;}
+    .edu-left, .edu-right {flex: 1; min-width: 300px;}
+    .edu-card {background: #fff; padding: 1.5rem; margin-bottom: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);}
+    .edu-card h3 {color: #222; margin-bottom: 0.3rem;}
+    .edu-card h4 {color: #f39c12; margin-bottom: 0.5rem;}
+    .edu-card p {color: #555; margin-bottom: 1rem;}
+    .edu-card ul {list-style: none;}
+    .edu-card ul li {margin-bottom: 0.5rem; color: #555;}
+    .edu-card ul li::before {content: "• "; color: #f1c40f; margin-right: 8px;}
+    .highlight-box {background: #fff7d6; padding: 1rem; border-radius: 8px; color: #555; margin-top: 1rem;}
+
+    /* Skills */
+    .skills-container {display: flex; justify-content: space-between; gap: 3rem; flex-wrap: wrap;}
+    .skills-card {flex: 1; background: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);}
+    .skills-card h3 {margin-bottom: 1rem; color: #222;}
+    .bar {margin-bottom: 1rem;}
+    .bar span {display: block; font-weight: 500; margin-bottom: 0.3rem;}
+    .progress {background: #eee; border-radius: 5px; height: 10px; overflow: hidden;}
+    .progress div {height: 100%; background: #f1c40f; width: 0; transition: width 1s ease-in-out;}
+    .core-competencies {margin-top: 2rem; background: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);}
+    .tags {display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;}
+    .tag {background: #fff7d6; padding: 8px 12px; border-radius: 8px; font-weight: 500; color: #444;}
+
+    /* Projects */
+    .project-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;}
+    .project-card {
+      background: #fff; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 1rem; text-align: left;
+    }
+    .project-card img {width: 100%; border-radius: 8px; margin-bottom: 1rem;}
+    .project-card h3 {margin-bottom: 0.5rem; color: #222;}
+    .project-card p {margin-bottom: 1rem; color: #555;}
+    
+    /* Leadership & Volunteering */
+    .leadership-card {
+        background: #fff; padding: 1.5rem; margin-bottom: 2rem; border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .leadership-card h3 {color: #222; margin-bottom: 0.5rem;}
+    .leadership-card h4 {color: #f39c12; margin-bottom: 0.5rem;}
+    .leadership-card p {color: #555; margin-bottom: 1rem;}
+    .leadership-card ul {list-style: none; padding-left: 1rem;}
+    .leadership-card ul li {margin-bottom: 0.5rem; color: #555;}
+    .leadership-card ul li::before {content: "• "; color: #f1c40f; margin-right: 8px;}
+
+    /* Contact */
+    .contact {text-align: center;}
+    .contact h2 {margin-bottom: 1rem;}
+    .contact-icons {display: flex; justify-content: center; gap: 2rem; margin-top: 1rem;}
+    .contact-icons a {font-size: 2rem; color: #444; transition: 0.3s;}
+    .contact-icons a:hover {color: #4e54c8;}
+
+    /* Responsive */
+    @media(max-width: 900px) {
+      .hero {flex-direction: column; text-align: center;}
+      .hero-text {max-width: 100%;}
+      .hero-img {margin-top: 2rem;}
+      .about-container, .edu-container, .skills-container {flex-direction: column;}
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Keerti</div>
+    <ul>
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="social-icons">
+      <a href="https://github.com/yourgithub" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/yourlinkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <h4>Hello, I'm</h4>
+      <h1>Keerti Panchakshari Charantimath</h1>
+      <h2>Software Engineer at Microsoft | Aspiring Engineering Manager</h2>
+      <p>I am pursuing a Master’s in Integrated Innovation for Products & Services at Carnegie Mellon University. 
+      With a strong background in Mathematics & Computing from IIT Kharagpur, India.</p>
+      <div class="buttons">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        <a href="Keerti_CV.pdf" target="_blank" class="btn btn-outline">View My CV</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="DSC02287.jpg" alt="Keerti">
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <div class="about-left">
+        <h3>My Story</h3>
+        <p>I am Keerti Panchakshari Charantimath, currently pursuing a Master’s in Integrated Innovation for Products & Services at Carnegie Mellon University. 
+        I completed my B.Sc + M.Sc in Mathematics and Computing from IIT Kharagpur (GPA: 9.17/10). I am presently working as a Software Engineer at Microsoft India.</p>
+        <p>My aim is to leverage my prior technological expertise and complement it with the skills and experiences gained at CMU to evolve into a product innovator. I aspire to design and develop impactful technological solutions that address real-world challenges, bridging the gap between advanced innovation and practical application.
+        My journey with educational NGOs and ed-tech firms made me realize the lack of standardization in education, 
+        motivating me to pursue engineering management and product innovation.</p>
+      </div>
+      <div class="about-right">
+        <h3>What Drives Me</h3>
+        <ul>
+          <li><span>Collaboration:</span> Building relationships and working effectively in diverse teams.</li>
+          <li><span>Growth:</span> Continuous learning and helping others achieve their potential.</li>
+          <li><span>Impact:</span> Creating accessible education that transforms lives globally.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Professional Experience</h2>
+
+    <div class="experience-card">
+      <h3>Software Engineer</h3>
+      <h4>Microsoft India</h4>
+      <span class="experience-date">2024 – Present</span>
+      <p>Full-time role contributing to large-scale software solutions and cloud-based systems.</p>
+      <ul>
+        <li>Developed scalable software features impacting millions of users.</li>
+        <li>Collaborated with cross-functional teams to deliver high-quality releases.</li>
+        <li>Optimized performance and reduced latency by 30% in critical workflows.</li>
+        <li>Mentored junior developers and contributed to best practices documentation.</li>
+      </ul>
+      <a href="link-to-microsoft-report.pdf" target="_blank" class="experience-link">View Report ↗</a>
+    </div>
+
+    <div class="experience-card">
+      <h3>Product Management Intern</h3>
+      <h4>Algozenith Technologies</h4>
+      <span class="experience-date">2024</span>
+      <p>Enhanced Algozenith’s ed-tech platform to improve user journey for 1200+ students.</p>
+      <ul>
+        <li>Improved platform navigation, boosting user satisfaction by 80%.</li>
+        <li>Introduced leaderboard & question bank features increasing engagement 32%.</li>
+        <li>Reduced time-to-market by 1.5× through agile planning.</li>
+        <li>Worked closely with developers and designers to align product goals.</li>
+      </ul>
+      <a href="link-to-algozenith-report.pdf" target="_blank" class="experience-link">View Report ↗</a>
+    </div>
+
+    <div class="experience-card">
+      <h3>Software Engineer Intern</h3>
+      <h4>Microsoft India</h4>
+      <span class="experience-date">2023</span>
+      <p>Contributed to Microsoft Sustainability Manager App by developing impactful features.</p>
+      <ul>
+        <li>Built “What-if Analysis” feature enabling greener emissions comparisons.</li>
+        <li>Automated computations reducing manual work for 500+ companies.</li>
+        <li>Created dashboards with ReactJS for better data visualization.</li>
+        <li>Improved code reliability by implementing Playwright automation tests.</li>
+      </ul>
+      <a href="link-to-microsoft-internship-certificate.pdf" target="_blank" class="experience-link">View Certificate ↗</a>
+    </div>
+
+    <div class="experience-card">
+      <h3>Research Intern</h3>
+      <h4>IIT Kharagpur</h4>
+      <span class="experience-date">2021</span>
+      <p>Worked on learning generalized causal structures in time-series data.</p>
+      <ul>
+        <li>Researched advanced ML models for time-series prediction.</li>
+        <li>Collaborated on publishing findings with senior faculty.</li>
+        <li>Implemented Python-based frameworks for data analysis.</li>
+        <li>Presented results at departmental research seminars.</li>
+      </ul>
+      <a href="link-to-research-paper.pdf" target="_blank" class="experience-link">View Paper ↗</a>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <h2>Achievements</h2>
+    <div class="achievements-grid">
+      <div class="achievement-card">
+        <h3>Achievement 1</h3>
+        <p>Ranked Top 0.9% in JEE Advanced 2019.</p>
+      </div>
+      <div class="achievement-card">
+        <h3>Achievement 2</h3>
+        <p>Awarded Fellowship 2021 by India’s top 3 science institutes.</p>
+      </div>
+      <div class="achievement-card">
+        <h3>Achievement 3</h3>
+        <p>3rd place in Inter-IIT Painting Competition 2022–23.</p>
+      </div>
+      <div class="achievement-card">
+        <h3>Achievement 4</h3>
+        <p>Ranked Top 0.7% in JEE Mains 2019.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education & Certifications</h2>
+    <div class="edu-container">
+      <div class="edu-left">
+        <div class="edu-card">
+          <h3>Master’s in Integrated Innovation for Products & Services</h3>
+          <h4>Carnegie Mellon University</h4>
+          <span>2024 – 2026</span>
+          <p>Specialized program in engineering management, product innovation, and entrepreneurship.</p>
+        </div>
+        <div class="edu-card">
+          <h3>B.Sc + M.Sc (Dual Degree) in Mathematics and Computing</h3>
+          <h4>IIT Kharagpur</h4>
+          <span>2019 – 2024</span>
+          <p>Graduated with GPA 9.17/10. Coursework in advanced mathematics, computing, and optimization.</p>
+          <ul>
+            <li>Department Rank 1 in several semesters.</li>
+            <li>Completed thesis in applied machine learning.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="edu-right">
+        <div class="edu-card">
+          <h3>Certifications</h3>
+          <ul>
+            <li>Machine Learning Specialization (2022)</li>
+            <li>Data Science for Engineers (2021)</li>
+            <li>Agile Project Management (2020)</li>
+          </ul>
+          <div class="highlight-box">
+            <h4>Continuous Learning</h4>
+            <p>I am committed to staying current with industry trends and regularly pursue workshops and certifications.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Expertise</h2>
+    <div class="skills-container">
+      <div class="skills-card">
+        <h3>Technical Skills</h3>
+        <div class="bar"><span>Python</span><div class="progress"><div style="width:90%"></div></div></div>
+        <div class="bar"><span>C++</span><div class="progress"><div style="width:85%"></div></div></div>
+        <div class="bar"><span>SQL & Databases</span><div class="progress"><div style="width:80%"></div></div></div>
+        <div class="bar"><span>Machine Learning</span><div class="progress"><div style="width:75%"></div></div></div>
+      </div>
+      <div class="skills-card">
+        <h3>Design & Tools</h3>
+        <div class="bar"><span>UI/UX Design</span><div class="progress"><div style="width:80%"></div></div></div>
+        <div class="bar"><span>Git & Version Control</span><div class="progress"><div style="width:90%"></div></div></div>
+        <div class="bar"><span>Project Management</span><div class="progress"><div style="width:85%"></div></div></div>
+      </div>
+    </div>
+    <div class="core-competencies">
+      <h3 style="text-align:center; margin-bottom:1rem;">Core Competencies</h3>
+      <div class="tags">
+        <div class="tag">Problem Solving</div>
+        <div class="tag">Team Leadership</div>
+        <div class="tag">Communication</div>
+        <div class="tag">Critical Thinking</div>
+        <div class="tag">Adaptability</div>
+        <div class="tag">Time Management</div>
+        <div class="tag">Mentoring</div>
+        <div class="tag">Strategic Planning</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="project1.jpg" alt="Project 1">
+        <h3>E-Commerce Platform</h3>
+        <p>Full-stack e-commerce solution with React, Node.js, PostgreSQL, and AWS.</p>
+      </div>
+      <div class="project-card">
+        <img src="project2.jpg" alt="Project 2">
+        <h3>Project Management Tool</h3>
+        <p>Real-time collaboration tool with Next.js, MongoDB, and Socket.io.</p>
+      </div>
+      <div class="project-card">
+        <img src="project3.jpg" alt="Project 3">
+        <h3>Analytics Dashboard</h3>
+        <p>Data visualization dashboard with React, D3.js, and FastAPI.</p>
+      </div>
+      <div class="project-card">
+        <img src="project4.jpg" alt="Project 4">
+        <h3>Mobile App Backend</h3>
+        <p>Scalable REST API backend with Node.js, MongoDB, Redis, and AWS.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="leadership">
+    <h2>Leadership & Volunteering</h2>
+    <div class="leadership-card">
+      <h3>President</h3>
+      <h4>Student Club Name</h4>
+      <p>Led a team of 50+ members to organize tech events and workshops. </p>
+      <ul>
+        <li>Organized a campus-wide hackathon with over 200 participants.</li>
+        <li>Mentored new members in project development and skill acquisition.</li>
+        <li>Managed a budget of $5,000 for club activities.</li>
+      </ul>
+    </div>
+
+    <div class="leadership-card">
+      <h3>Volunteer</h3>
+      <h4>NGO for Education</h4>
+      <p>Contributed to a non-profit organization focused on providing educational resources to underprivileged children.</p>
+      <ul>
+        <li>Developed and taught a coding curriculum to 30+ students.</li>
+        <li>Coordinated with a team to distribute school supplies.</li>
+        <li>Assisted in fundraising campaigns, raising over $10,000.</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Let’s connect! Reach out through any of the following:</p>
+    <div class="contact-icons">
+      <a href="https://github.com/yourgithub" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/yourlinkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </section>
+
+</body>
+</html>
